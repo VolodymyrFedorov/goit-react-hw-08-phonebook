@@ -38,7 +38,6 @@ export const LoginForm = () => {
           name="email"
           label="Email"
           variant="outlined"
-          // autoComplete="off"
           size="small"
         />
         <TextField
