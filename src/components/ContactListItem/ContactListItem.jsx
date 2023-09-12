@@ -3,7 +3,8 @@ import css from './ContactListItem.module.css';
 import { FcPhone } from 'react-icons/fc';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import { AiOutlineDelete } from 'react-icons/ai';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();
@@ -14,13 +15,17 @@ export const ContactListItem = ({ contact }) => {
         <FcPhone size={'1.5em'} />
         {contact.name}: {contact.number}
       </div>
-      <button
-        className={css.button_delete}
-        type="button"
+
+      <Button
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+        variant="outlined"
+        color="error"
+        startIcon={<DeleteIcon color="error" />}
         onClick={() => dispatch(deleteContact(contact.id))}
-      >
-        <AiOutlineDelete size={'1.5em'} />
-      </button>
+      ></Button>
     </li>
   );
 };

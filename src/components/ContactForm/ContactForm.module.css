@@ -16,6 +16,9 @@
   -moz-box-shadow: 6px 6px 9px -1px rgba(0, 0, 0, 0.47);
 }
 
+.label {
+}
+
 .input {
   margin-left: 15px;
   border-radius: 5px;
